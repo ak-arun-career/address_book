@@ -1,0 +1,34 @@
+{
+    "contacts": [
+        {
+            "id": "q123",
+            "name": {
+                "first": "Cristiano",
+                "last": "Ronaldo"
+            },
+            "email": "cristiano.ronaldo@example.com",
+            "phone": "0681234567",
+            "status": "Work"
+        },
+        {
+            "id": "q456",
+            "name": {
+                "first": "Lionel",
+                "last": "Messi"
+            },
+            "email": "lionel.messi@example.ag",
+            "phone": "0681234789",
+            "status": "Private"
+        },
+        {
+            "id": "q789",
+            "name": {
+                "first": "Kylian",
+                "last": "Mbappe"
+            },
+            "email": "kylian.mbappe@example.fr",
+            "phone": "0678934789",
+            "status": "Work"
+        }
+    ]
+}
