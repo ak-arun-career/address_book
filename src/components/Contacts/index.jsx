@@ -39,6 +39,30 @@ export const Contacts = ({ editContact }) => {
         setListOfContacts(tempContactsArray);
     }
 
+    /**
+     * Function to display the list of contacts
+     * Returns a message when no contacts are found
+     */
+    const list = () => {
+        if (listOfContacts.length > 0) {
+            return (
+                <ContactList>
+                    {
+                        listOfContacts.map(contact => (
+                            <Contact
+                                key={contact.id}
+                                details={contact}
+                                editContact={(data) => editContact(data)}
+                            />
+                        ))
+                    }
+                </ContactList>
+            )
+        } else {
+            return <Message>No Contacts found!!</Message>
+        }
+    }
+
     return (
         <>
             <Tabs>
@@ -52,17 +76,8 @@ export const Contacts = ({ editContact }) => {
                     </Tab>
                 ))}
             </Tabs>
-            <ContactList>
-                {
-                    listOfContacts.map(contact => (
-                        <Contact
-                            key={contact.id}
-                            details={contact}
-                            editContact={(data) => editContact(data)}
-                        />
-                    ))
-                }
-            </ContactList>
+
+            { list() }
         </>
     );
 }
@@ -106,4 +121,9 @@ const Tab = styled.button`
         background: lightseagreen;
         color: lavender;
     }
+`;
+
+const Message = styled.div`
+    text-align: center;
+    padding: 6px 0;
 `;
