@@ -17,7 +17,7 @@ const ContactForm = ({ submitForm, cancelForm }) => {
     return (
         <Mask>
             <Container>
-                <TitleBar>Edit Contact</TitleBar>
+                <TitleBar>{ (Object.keys(contactForEditing).length > 0) ? `Edit` : `Add` } Contact </TitleBar>
                 <Form>
                     <VerticalSpacer>
                         <Label className={'mandatory-field'}>First Name:</Label>
@@ -104,6 +104,7 @@ const TitleBar = styled.div`
     background: darkslategray;
     color: white;
     border-radius: 6px 6px 0 0;
+    text-align: center;
 `;
 
 const Form = styled.form`

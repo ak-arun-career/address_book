@@ -1,10 +1,14 @@
 import React from "react";
 import styled from 'styled-components';
 import { FaPlus } from 'react-icons/fa';
+import { FcAddressBook } from 'react-icons/fc';
 
 const Header = ({ showForm }) => (
     <Container>
-        <PageTitle>Address Book</PageTitle>
+        <PageTitle>
+            <FcAddressBook size={'1.75rem'} />
+            <span>Address Book</span>
+        </PageTitle>
 
         <ActionButton onClick={() => showForm()}>
             <FaPlus /> Add Contact
@@ -25,6 +29,9 @@ const Container = styled.div`
 
 const PageTitle = styled.div`
     font-size: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     font-weight: bold;
     color: lightgray;
 `;

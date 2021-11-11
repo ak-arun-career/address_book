@@ -33,10 +33,10 @@ const Contact = ({ details, editContact }) => {
                 </div>
                 <div>
                     <ActionButton onClick={() => editAContact()}>
-                        <FaPencilAlt />
+                        <FaPencilAlt color={"green"}/>
                     </ActionButton>
                     <ActionButton onClick={() => delContact(details.id)}>
-                        <FaTrashAlt />
+                        <FaTrashAlt color={"red"}/>
                     </ActionButton>
                 </div>
             </TitlePanel>

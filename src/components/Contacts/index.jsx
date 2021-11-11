@@ -20,6 +20,7 @@ export const Contacts = ({ editContact }) => {
     /** Set list of contacts when list is updated */
     useEffect(() => {
         setListOfContacts(ContactsArray.contacts);
+        setActive(statuses[0]);
     }, [ContactsArray.contacts]);
 
     /** Status filter tabs */
