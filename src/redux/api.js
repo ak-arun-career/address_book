@@ -8,7 +8,6 @@ const endPoints = {
 
 const api = {
     callContacts: () => {
-        console.log("inside api");
         return request(`${url}${endPoints.CONTACTS}`);
     }
 }

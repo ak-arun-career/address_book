@@ -14,12 +14,12 @@ export const Home = () => {
     /** Function to display the contact form
      * In case a contact is edited, the form comes pre-filled with the contact details
      */
-    const showForm = (data, action) => {
-        if (action === 'edit') {
-            dispatch(ContactActions.actions.addToEdit(data))
+    const showForm = ({ ...args }) => {
+        if (args.action === 'edit') {
+            dispatch(ContactActions.actions.addToEdit(args.data))
         }
         setShowContactForm(true);
-        setFormAction(action);
+        setFormAction(args.action);
     };
 
     /** Function to generate a unique id to be used while adding a contact */
@@ -54,7 +54,7 @@ export const Home = () => {
 
     return (
         <>
-            <Header showForm={() => showForm({}, 'add')} />
+            <Header showForm={() => showForm({ action: 'add' })} />
 
             {showContactForm &&
                 <ContactForm
@@ -64,7 +64,7 @@ export const Home = () => {
             }
 
             <Contacts
-                editContact={(data) => showForm(data, 'edit')}
+                editContact={(data) => showForm({ data: data, action: 'edit' })}
             />
         </>
     );
