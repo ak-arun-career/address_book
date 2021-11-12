@@ -14,12 +14,12 @@ export const Home = () => {
     /** Function to display the contact form
      * In case a contact is edited, the form comes pre-filled with the contact details
      */
-    const showForm = ({ ...args }) => {
-        if (args.action === 'edit') {
-            dispatch(ContactActions.actions.addToEdit(args.data))
+    const showForm = ({ data, action }) => {
+        if (action === 'edit') {
+            dispatch(ContactActions.actions.addToEdit(data))
         }
         setShowContactForm(true);
-        setFormAction(args.action);
+        setFormAction(action);
     };
 
     /** Function to generate a unique id to be used while adding a contact */
